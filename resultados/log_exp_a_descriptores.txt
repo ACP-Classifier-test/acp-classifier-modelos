@@ -1,0 +1,128 @@
+==============================================================
+  EXP A — DESCRIPTORES FISICOQUÍMICOS
+  Entrenamiento: Training.fasta   |   Evaluación: Independent.fasta
+==============================================================
+
+  Training.fasta    : 1176 ACPs / 1176 no-ACPs = 2352   (esperado 1176/1176)
+  Independent.fasta : 610 ACPs / 2760 no-ACPs = 3370   (esperado 610/2760)
+
+  Calculando descriptores...
+  caché reutilizada: train_desc577.npy (2352, 577)
+  caché reutilizada: test_desc577.npy (3370, 577)
+
+  Verificación [train]
+    shape ................ (2352, 577)
+    NaN / Inf ............ 0 / 0
+    columnas varianza 0 .. 0 de 577
+    desv. típica media ... 6.473377
+    OK: el bloque tiene información real.
+
+  SMOTE sobre el train completo: 2352 -> 2352 muestras (0 sintéticas)
+  ^ El training set ya está balanceado (1176/1176): SMOTE es un no-op.
+    Se mantiene solo por comparabilidad con las Fases 2 y 3.
+    El desbalance real (18/82) está en el TEST, y por eso se reporta
+    AUC-ROC / F1 / MCC en lugar de accuracy.
+
+==============================================================
+  SVM RBF
+==============================================================
+    Fold 1/5 | AUC 0.8766 | F1 0.7921 | {'C': 1, 'gamma': 'scale'}
+    Fold 2/5 | AUC 0.9038 | F1 0.8166 | {'C': 1, 'gamma': 'auto'}
+    Fold 3/5 | AUC 0.8956 | F1 0.8202 | {'C': 1, 'gamma': 'auto'}
+    Fold 4/5 | AUC 0.8689 | F1 0.8069 | {'C': 1, 'gamma': 'scale'}
+    Fold 5/5 | AUC 0.8722 | F1 0.8182 | {'C': 1, 'gamma': 'scale'}
+    CV AUC-ROC: 0.8834 +/- 0.0138
+    TEST INDEPENDIENTE | AUC 0.8416 | F1 0.5669 | Acc 0.8136 | MCC 0.4614   (1330s)
+
+==============================================================
+  Random Forest
+==============================================================
+    Fold 1/5 | AUC 0.8718 | F1 0.7729 | {'max_depth': None, 'n_estimators': 200}
+    Fold 2/5 | AUC 0.9064 | F1 0.8142 | {'max_depth': None, 'n_estimators': 300}
+    Fold 3/5 | AUC 0.8977 | F1 0.8200 | {'max_depth': 20, 'n_estimators': 300}
+    Fold 4/5 | AUC 0.8763 | F1 0.8000 | {'max_depth': None, 'n_estimators': 300}
+    Fold 5/5 | AUC 0.8951 | F1 0.7983 | {'max_depth': 20, 'n_estimators': 300}
+    CV AUC-ROC: 0.8895 +/- 0.0132
+    TEST INDEPENDIENTE | AUC 0.8151 | F1 0.5068 | Acc 0.7834 | MCC 0.3831   (61s)
+
+==============================================================
+  Extra Trees
+==============================================================
+    Fold 1/5 | AUC 0.8773 | F1 0.7930 | {'max_depth': None, 'n_estimators': 300}
+    Fold 2/5 | AUC 0.9092 | F1 0.8190 | {'max_depth': 20, 'n_estimators': 300}
+    Fold 3/5 | AUC 0.8973 | F1 0.8000 | {'max_depth': None, 'n_estimators': 300}
+    Fold 4/5 | AUC 0.8757 | F1 0.8053 | {'max_depth': None, 'n_estimators': 300}
+    Fold 5/5 | AUC 0.8994 | F1 0.7965 | {'max_depth': None, 'n_estimators': 300}
+    CV AUC-ROC: 0.8918 +/- 0.0131
+    TEST INDEPENDIENTE | AUC 0.8207 | F1 0.4915 | Acc 0.7881 | MCC 0.3655   (67s)
+
+==============================================================
+  Gradient Boosting
+==============================================================
+    Fold 1/5 | AUC 0.8686 | F1 0.7817 | {'learning_rate': 0.2, 'max_depth': 5, 'n_estimators': 200}
+    Fold 2/5 | AUC 0.9048 | F1 0.8176 | {'learning_rate': 0.1, 'max_depth': 5, 'n_estimators': 200}
+    Fold 3/5 | AUC 0.9008 | F1 0.8121 | {'learning_rate': 0.05, 'max_depth': 5, 'n_estimators': 200}
+    Fold 4/5 | AUC 0.8793 | F1 0.8060 | {'learning_rate': 0.1, 'max_depth': 5, 'n_estimators': 100}
+    Fold 5/5 | AUC 0.8966 | F1 0.8228 | {'learning_rate': 0.05, 'max_depth': 5, 'n_estimators': 200}
+    CV AUC-ROC: 0.8900 +/- 0.0138
+    TEST INDEPENDIENTE | AUC 0.8228 | F1 0.5112 | Acc 0.7861 | MCC 0.3889   (677s)
+
+==============================================================
+  Logistic Regression
+==============================================================
+    Fold 1/5 | AUC 0.8582 | F1 0.7904 | {'C': 0.001, 'solver': 'saga'}
+    Fold 2/5 | AUC 0.8842 | F1 0.8044 | {'C': 0.001, 'solver': 'saga'}
+    Fold 3/5 | AUC 0.8718 | F1 0.8000 | {'C': 0.001, 'solver': 'lbfgs'}
+    Fold 4/5 | AUC 0.8451 | F1 0.7696 | {'C': 0.001, 'solver': 'saga'}
+    Fold 5/5 | AUC 0.8809 | F1 0.8052 | {'C': 0.001, 'solver': 'saga'}
+    CV AUC-ROC: 0.8680 +/- 0.0146
+    TEST INDEPENDIENTE | AUC 0.7968 | F1 0.5098 | Acc 0.7843 | MCC 0.3870   (92s)
+
+==============================================================
+  KNN
+==============================================================
+    Fold 1/5 | AUC 0.8273 | F1 0.7500 | {'metric': 'euclidean', 'n_neighbors': 11, 'weights': 'distance'}
+    Fold 2/5 | AUC 0.8876 | F1 0.8162 | {'metric': 'cosine', 'n_neighbors': 11, 'weights': 'distance'}
+    Fold 3/5 | AUC 0.8687 | F1 0.7845 | {'metric': 'cosine', 'n_neighbors': 11, 'weights': 'distance'}
+    Fold 4/5 | AUC 0.8543 | F1 0.7817 | {'metric': 'cosine', 'n_neighbors': 11, 'weights': 'distance'}
+    Fold 5/5 | AUC 0.8823 | F1 0.7992 | {'metric': 'cosine', 'n_neighbors': 11, 'weights': 'distance'}
+    CV AUC-ROC: 0.8640 +/- 0.0217
+    TEST INDEPENDIENTE | AUC 0.7163 | F1 0.4100 | Acc 0.6849 | MCC 0.2477   (5s)
+
+==============================================================
+  MLP
+==============================================================
+    Fold 1/5 | AUC 0.8515 | F1 0.7768 | {'alpha': 0.001, 'hidden_layer_sizes': (512,), 'learning_rate_init': 0.0001}
+    Fold 2/5 | AUC 0.8777 | F1 0.7974 | {'alpha': 0.01, 'hidden_layer_sizes': (512,), 'learning_rate_init': 0.0001}
+    Fold 3/5 | AUC 0.8505 | F1 0.7925 | {'alpha': 0.001, 'hidden_layer_sizes': (256, 128), 'learning_rate_init': 0.001}
+    Fold 4/5 | AUC 0.8506 | F1 0.7761 | {'alpha': 0.01, 'hidden_layer_sizes': (512,), 'learning_rate_init': 0.0001}
+    Fold 5/5 | AUC 0.8543 | F1 0.7923 | {'alpha': 0.0001, 'hidden_layer_sizes': (256, 128), 'learning_rate_init': 0.001}
+    CV AUC-ROC: 0.8569 +/- 0.0105
+    TEST INDEPENDIENTE | AUC 0.7575 | F1 0.4780 | Acc 0.7680 | MCC 0.3451   (2426s)
+
+
+==============================================================================
+  EXP A — RESULTADOS SOBRE EL TEST INDEPENDIENTE DE mACPpred 2.0
+==============================================================================
+             Modelo  AUC-ROC CV  AUC-ROC Test  F1 Test  Accuracy Test  MCC Test
+            SVM RBF      0.8834        0.8416   0.5669         0.8136    0.4614
+  Gradient Boosting      0.8900        0.8228   0.5112         0.7861    0.3889
+        Extra Trees      0.8918        0.8207   0.4915         0.7881    0.3655
+      Random Forest      0.8895        0.8151   0.5068         0.7834    0.3831
+Logistic Regression      0.8680        0.7968   0.5098         0.7843    0.3870
+                MLP      0.8569        0.7575   0.4780         0.7680    0.3451
+                KNN      0.8640        0.7163   0.4100         0.6849    0.2477
+
+  Guardado en: C:\tesis_acp\trabajo_grado\codigo\results\resultados_descriptores_test_independiente.csv
+  Tiempo total: 77.6 min
+
+==============================================================================
+  CONTEXTO — mismo test independiente, mismo protocolo
+==============================================================================
+    Descriptores (este script)  SVM RBF                0.8416
+    ESM-2 8M clean              Logistic Regression    0.8745
+    ProtBERT                    SVM RBF                0.8517
+    mACPpred 2.0 (referencia)   SDL+CNN                0.817
+
+  Recordatorio: el 0.8937 de main.py NO va en esta tabla — viene del split
+  80/20 sobre el dataset mezclado y no es comparable con estas filas.

@@ -1,0 +1,31 @@
+=================================================================
+  FASE 3 — Embeddings de Lenguaje Proteico
+  Modelo  : protbert  (Rostlab/prot_bert_bfd)
+  Dim     : 1024
+  Tiempo  : ~4-8 h CPU
+  Fast    : False  |  SMOTE: True  |  PCA: off
+=================================================================
+
+[1/4] Cargando dataset...
+============================================================
+  CARGANDO DATASET mACPpred 2.0
+============================================================
+  Training.fasta:    1176 ACPs  1176 Non-ACPs
+  Independent.fasta:  610 ACPs  2760 Non-ACPs
+
+  TOTAL (sin duplicados):
+    ACPs     : 1786
+    Non-ACPs : 3936
+    Total    : 5722
+    Balance  : 0.454  (ACP/Non-ACP)
+  Total: 5722 secuencias  (ACP=1786, Non-ACP=3936)
+
+[2/4] Generando embeddings con protbert...
+  Esto puede tardar ~4-8 h CPU. Los resultados se guardarán en caché.
+
+  Cargando ProtBERT: Rostlab/prot_bert_bfd
+  Dispositivo: cpu
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+C:\Users\kais6\AppData\Roaming\Python\Python314\site-packages\huggingface_hub\file_download.py:141: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\kais6\.cache\huggingface\hub\models--Rostlab--prot_bert_bfd. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)

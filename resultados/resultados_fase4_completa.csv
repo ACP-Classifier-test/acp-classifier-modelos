@@ -1,0 +1,11 @@
+Representacion,Modelo,AUC-ROC CV,AUC-ROC CV std,F1 CV,MCC CV,AUC-ROC Test,F1 Test,Accuracy Test,MCC Test,Mejores params
+Late fusion desc+ESM-2 (w=0.5),SVM RBF,0.9031,0.0105,0.8275,0.6593,0.8731,0.6102,0.8362,0.5169,"desc={'C': 1, 'gamma': 'auto'} | emb={'C': 10, 'gamma': 0.001}"
+Multimodal concatenación (897 dim),SVM RBF,0.8937,0.0122,0.8168,0.6389,0.8676,0.6197,0.8365,0.5296,"{'C': 1, 'gamma': 'scale'}"
+Multimodal concatenación (897 dim),Random Forest,0.8991,0.0129,0.819,0.6396,0.8657,0.6157,0.8315,0.525,"{'max_depth': 20, 'n_estimators': 300}"
+Multimodal concatenación (897 dim),Extra Trees,0.8988,0.0149,0.8228,0.6499,0.8622,0.6033,0.8341,0.5081,"{'max_depth': 20, 'n_estimators': 300}"
+Late fusion desc+ESM-2 (w=0.5),Extra Trees,0.902,0.0133,0.8155,0.6384,0.8584,0.5931,0.8261,0.4951,"desc={'max_depth': None, 'n_estimators': 300} | emb={'max_depth': None, 'n_estimators': 300}"
+Multimodal concatenación (897 dim),Gradient Boosting,0.8943,0.0132,0.8178,0.6389,0.8568,0.6045,0.8214,0.5116,"{'learning_rate': 0.2, 'max_depth': 5, 'n_estimators': 200}"
+Late fusion desc+ESM-2 (w=0.5),Logistic Regression,0.8921,0.0125,0.8228,0.65,0.8564,0.5953,0.8273,0.4979,"desc={'C': 0.001, 'solver': 'saga'} | emb={'C': 0.01, 'solver': 'saga'}"
+Multimodal concatenación (897 dim),Logistic Regression,0.8883,0.0143,0.8163,0.6419,0.8413,0.5661,0.8217,0.461,"{'C': 0.001, 'solver': 'lbfgs'}"
+Multimodal concatenación (897 dim),KNN,0.8914,0.0158,0.8148,0.6149,0.7952,0.4969,0.7567,0.3697,"{'metric': 'cosine', 'n_neighbors': 11, 'weights': 'distance'}"
+Multimodal concatenación (897 dim),MLP,0.8774,0.0097,0.7993,0.6043,0.7732,0.4983,0.7819,0.3724,"{'alpha': 0.0001, 'hidden_layer_sizes': (256, 128), 'learning_rate_init': 0.0001}"

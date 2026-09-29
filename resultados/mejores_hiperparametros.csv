@@ -1,0 +1,12 @@
+Model,Best_Params
+SVM_RBF,"{'C': 1, 'gamma': 0.01}"
+SVM_Linear,{'C': 1}
+Random_Forest,"{'max_depth': 20, 'min_samples_leaf': 2, 'n_estimators': 50}"
+Gradient_Boosting,"{'learning_rate': 0.1, 'max_depth': 7, 'n_estimators': 100}"
+Extra_Trees,"{'max_depth': None, 'min_samples_leaf': 1, 'n_estimators': 100}"
+KNN,"{'metric': 'manhattan', 'n_neighbors': 9, 'weights': 'distance'}"
+Logistic_Regression,"{'C': 0.01, 'penalty': 'l2', 'solver': 'liblinear'}"
+AdaBoost,"{'learning_rate': 1.0, 'n_estimators': 200}"
+MLP,"{'alpha': 0.01, 'hidden_layer_sizes': (100, 50), 'learning_rate_init': 0.01}"
+Decision_Tree,"{'max_depth': 5, 'min_samples_leaf': 4, 'min_samples_split': 10}"
+Naive_Bayes,{'var_smoothing': 1e-09}

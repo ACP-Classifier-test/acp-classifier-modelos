@@ -1,0 +1,8 @@
+Representacion,Modelo,AUC-ROC CV,AUC-ROC CV std,F1 CV,MCC CV,AUC-ROC Test,F1 Test,Accuracy Test,MCC Test,Mejores params
+Descriptores fisicoquímicos (577 dim),SVM RBF,0.8834,0.0138,0.8108,0.6318,0.8416,0.5669,0.8136,0.4614,"{'C': 1, 'gamma': 'scale'}"
+Descriptores fisicoquímicos (577 dim),Gradient Boosting,0.89,0.0138,0.808,0.623,0.8228,0.5112,0.7861,0.3889,"{'learning_rate': 0.05, 'max_depth': 5, 'n_estimators': 200}"
+Descriptores fisicoquímicos (577 dim),Extra Trees,0.8918,0.0131,0.8027,0.6208,0.8207,0.4915,0.7881,0.3655,"{'max_depth': None, 'n_estimators': 300}"
+Descriptores fisicoquímicos (577 dim),Random Forest,0.8895,0.0132,0.8011,0.6113,0.8151,0.5068,0.7834,0.3831,"{'max_depth': 20, 'n_estimators': 300}"
+Descriptores fisicoquímicos (577 dim),Logistic Regression,0.868,0.0146,0.7939,0.6006,0.7968,0.5098,0.7843,0.387,"{'C': 0.001, 'solver': 'saga'}"
+Descriptores fisicoquímicos (577 dim),MLP,0.8569,0.0105,0.787,0.5749,0.7575,0.478,0.768,0.3451,"{'alpha': 0.01, 'hidden_layer_sizes': (512,), 'learning_rate_init': 0.0001}"
+Descriptores fisicoquímicos (577 dim),KNN,0.864,0.0217,0.7863,0.5518,0.7163,0.41,0.6849,0.2477,"{'metric': 'cosine', 'n_neighbors': 11, 'weights': 'distance'}"

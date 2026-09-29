@@ -1,0 +1,30 @@
+ADVERTENCIA sobre resultados_fase4_completa_RECONSTRUIDO.csv
+=============================================================
+Escrito el 2026-09-17.
+
+Este archivo se reconstruyo a mano cuando todavia no habia llegado el CSV original de
+Brayan. Ese original ya esta aqui: resultados_fase4_completa.csv (10 filas). Usa ESE
+para cualquier cifra que vaya al libro.
+
+NO USAR la columna "F1 CV" de este archivo reconstruido
+-------------------------------------------------------
+Para la fila ganadora (late fusion, SVM RBF) dice 0.7913. Ese valor NO aparece en
+log_fase4_completa.txt, ni en ninguna salida de ESM_2_v1_FASE4_CORREGIDA.ipynb, ni en
+ningun otro archivo del proyecto: solo aqui. No tiene origen rastreable.
+
+El valor bueno es 0.8275, que es el del CSV original y coincide con el promedio de los
+cinco F1 por pliegue que imprime la celda 29 del notebook (0.8164, 0.8294, 0.8326,
+0.8294, 0.8298). Es F1 BINARIO sobre la clase positiva: la celda llama
+f1_score(y_true, y_pred) sin el argumento average, y el default de scikit-learn es
+average='binary'.
+
+Por que se conserva este archivo
+--------------------------------
+Tiene dos columnas que el original NO trae y que no estan en ningun otro sitio:
+  - "Tiempo (s)": duracion de cada modelo.
+  - "Params por fold (outer)": los hiperparametros elegidos en cada uno de los cinco
+    pliegues externos, no solo los del reajuste final.
+
+Las cifras de test (AUC, F1, Accuracy, MCC) coinciden fila por fila con el original.
+
+Ver documentacion/DISCREPANCIAS_2026-09-17.md, puntos D1 y D2.

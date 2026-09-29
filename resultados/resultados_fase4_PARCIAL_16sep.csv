@@ -1,0 +1,7 @@
+﻿Experimento,Representacion,Modelo,AUC-ROC CV,AUC-ROC CV std,F1 CV,MCC CV,AUC-ROC Test,F1 Test,Accuracy Test,MCC Test,Mejores params
+EXP B — concatenación directa,Multimodal concatenado (897 dim),SVM RBF,0.8937,0.0122,0.8168,0.6389,0.8676,0.6197,0.8365,0.5296,"{'C': 1, 'gamma': 'scale'}"
+EXP B — concatenación directa,Multimodal concatenado (897 dim),Random Forest,0.8991,0.0129,0.8185,0.6388,0.8657,0.6152,0.8315,0.5243,"{'max_depth': 20, 'n_estimators': 300}"
+EXP B — concatenación directa,Multimodal concatenado (897 dim),Extra Trees,0.8987,0.0148,0.8222,0.6482,0.8624,0.6018,0.8335,0.5063,"{'max_depth': 20, 'n_estimators': 300}"
+EXP B — concatenación directa,Multimodal concatenado (897 dim),Gradient Boosting,0.8938,0.0131,0.8186,0.6406,0.8569,0.6001,0.8193,0.5059,"{'learning_rate': 0.2, 'max_depth': 5, 'n_estimators': 200}"
+EXP B — concatenación directa,Multimodal concatenado (897 dim),Logistic Regression,0.8883,0.0143,0.8163,0.6419,0.8413,0.5661,0.8217,0.461,"{'C': 0.001, 'solver': 'lbfgs'}"
+EXP B — concatenación directa,Multimodal concatenado (897 dim),KNN,0.8914,0.0158,0.8148,0.6149,0.7952,0.4969,0.7567,0.3697,"{'metric': 'cosine', 'n_neighbors': 11, 'weights': 'distance'}"

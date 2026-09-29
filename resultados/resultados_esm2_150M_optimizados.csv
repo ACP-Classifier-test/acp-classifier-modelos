@@ -1,0 +1,8 @@
+Modelo,Accuracy,AUC-ROC,F1-score,MCC,Mejores params
+SVM RBF,0.8424,0.8555,0.6075,0.514,"{'C': 1, 'gamma': 0.001}"
+Logistic Regression,0.8243,0.8521,0.59,0.4912,"{'C': 0.01, 'penalty': 'l2', 'solver': 'lbfgs'}"
+Extra Trees,0.8409,0.8513,0.5921,0.4959,"{'max_depth': 20, 'min_samples_split': 5, 'n_estimators': 300}"
+Random Forest,0.8315,0.8427,0.5872,0.488,"{'max_depth': 20, 'min_samples_split': 5, 'n_estimators': 200}"
+Gradient Boosting,0.8136,0.8399,0.5577,0.4498,"{'learning_rate': 0.05, 'max_depth': 7, 'n_estimators': 200}"
+KNN,0.8119,0.8342,0.5529,0.4436,"{'metric': 'cosine', 'n_neighbors': 15, 'weights': 'distance'}"
+DNN,0.7697,0.8247,0.5257,0.4091,default
